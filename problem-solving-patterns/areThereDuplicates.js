@@ -9,7 +9,7 @@ Bonus:
 Time - O(n*log(n))
 Space - O(1)
 
-Multiple Pointers
+Frequency Counter
 */
 
 function areThereDuplicates() {
