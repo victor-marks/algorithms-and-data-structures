@@ -6,9 +6,9 @@ function selectionSort(arr) {
         lowest = j;
       }
     }
-    [[arr[i], arr[lowest]]] = [[arr[lowest], arr[i]]];
+    if (i !== lowest) [[arr[i], arr[lowest]]] = [[arr[lowest], arr[i]]];
   }
   return arr;
 }
 
-selectionSort([19, 44, 38, 5, 47, 15]);
+selectionSort([2, 19, 44, 38, 5, 47, 15]);
