@@ -1,3 +1,6 @@
+// Insertion and Removal: O(1)
+// Searching and Access: O(n)
+
 class Node {
   constructor(value) {
     this.value = value;
