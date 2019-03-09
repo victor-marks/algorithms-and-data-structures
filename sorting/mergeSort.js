@@ -1,3 +1,6 @@
+// Time Complexity: O(n*log n)
+// Space Complexity: O(1)
+
 // Merge 2 arrays together from lowest to highest
 function merge(arr1, arr2) {
   let sorted = [];
