@@ -64,9 +64,9 @@ class BST {
     let data = [];
     let queue = [];
 
-    queue.push(this.root);
+    queue.push(node);
 
-    while (queue.length === 0) {
+    while (queue.length !== 0) {
       node = queue.shift();
       data.push(node.value);
       if (node.left) queue.push(node.left);
