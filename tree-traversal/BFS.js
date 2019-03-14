@@ -1,6 +1,3 @@
-// Inserting: O(log n)
-// Searching: O(log n)
-
 class Node {
   constructor(val) {
     this.val = val;
@@ -39,24 +36,6 @@ class BST {
         current.right = newNode;
       }
     }
-  }
-
-  find(value) {
-    if (this.root === null) return false;
-
-    let current = this.root;
-    let found = false;
-
-    while (current && !found) {
-      if (val < current.value) {
-        current = current.left;
-      } else if (val > current.value) {
-        current = current.right;
-      } else {
-        return true;
-      }
-    }
-    return false;
   }
 
   BFS() {
