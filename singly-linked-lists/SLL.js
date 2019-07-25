@@ -134,6 +134,20 @@ class SinglyLinkedList {
     return this;
   }
 
+  detectLoop() {
+    let slowPointer = this.head;
+    let fastPointer = this.head;
+
+    while (slowPointer && fastPointer && fastPointer.next) {
+      slowPointer = slowPointer.next;
+      fastPointer = fastPointer.next.next;
+
+      if (slowPointer === fastPointer) return true;
+    }
+
+    return false;
+  }
+
   print() {
     let arr = [];
     let current = this.head;
