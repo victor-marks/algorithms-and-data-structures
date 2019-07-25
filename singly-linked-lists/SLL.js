@@ -168,6 +168,16 @@ class SinglyLinkedList {
         return slow;
       }
     }
+
+    findLoopMiddle() {
+      let slow = this.head;
+      let fast = this.head;
+      while (slow && fast) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (fast === null) return slow;
+      }
+    }
   }
 
   print() {
