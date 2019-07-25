@@ -135,17 +135,39 @@ class SinglyLinkedList {
   }
 
   detectLoop() {
-    let slowPointer = this.head;
-    let fastPointer = this.head;
+    let tortoise = this.head;
+    let hare = this.head;
 
-    while (slowPointer && fastPointer && fastPointer.next) {
-      slowPointer = slowPointer.next;
-      fastPointer = fastPointer.next.next;
+    while (tortoise && hare && hare.next) {
+      tortoise = tortoise.next;
+      hare = hare.next.next;
 
-      if (slowPointer === fastPointer) return true;
+      if (tortoise === hare) return true;
     }
 
     return false;
+  }
+
+  findLoopStart() {
+    let slow = this.head;
+    let fast = this.head;
+
+    while (slow && fast) {
+      slow = slow.next;
+
+      // if hits null, then there is no loop
+      if (!fast.next) return null;
+
+      fast = fast.next.next;
+      if (slow === fast) {
+        slow = this.head;
+        while (slow !== fast) {
+          slow = slow.next;
+          fast = fast.next;
+        }
+        return slow;
+      }
+    }
   }
 
   print() {
