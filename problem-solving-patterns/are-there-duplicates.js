@@ -20,6 +20,7 @@ function areThereDuplicates() {
   for (let key in obj) {
     if (obj[key] > 1) return true;
   }
+
   return false;
 }
 
