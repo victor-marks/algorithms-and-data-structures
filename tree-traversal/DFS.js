@@ -40,7 +40,6 @@ class BST {
 
   DFSPreOrder() {
     let data = [];
-    let current = this.root;
 
     function traverse(node) {
       data.push(node.value);
@@ -54,7 +53,6 @@ class BST {
 
   DFSPostOrder() {
     let data = [];
-    let current = this.root;
 
     function traverse(node) {
       if (node.left) traverse(node.left);
@@ -68,7 +66,6 @@ class BST {
 
   DFSInOrder() {
     let data = [];
-    let current = this.root;
 
     function traverse(node) {
       if (node.left) traverse(node.left);

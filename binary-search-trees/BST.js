@@ -24,7 +24,7 @@ class BST {
     }
 
     while (true) {
-      if (val === this.val) return undefined;
+      if (val === current.val) return undefined;
       if (val < current.val) {
         if (current.left === null) {
           current.left = newNode;
@@ -36,7 +36,7 @@ class BST {
           current.right = newNode;
           return this;
         }
-        current.right = newNode;
+        current = current.right;
       }
     }
   }
@@ -48,9 +48,9 @@ class BST {
     let found = false;
 
     while (current && !found) {
-      if (val < current.value) {
+      if (val < current.val) {
         current = current.left;
-      } else if (val > current.value) {
+      } else if (val > current.val) {
         current = current.right;
       } else {
         return true;
